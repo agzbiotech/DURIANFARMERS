@@ -113,7 +113,7 @@
         <option>YouTube / วิดีโอ</option>
         <option>เข้ามาเยี่ยมชมสวน</option>
       </select>
-      <button type="submit">ส่งแบบสอบถาม และเข้าสู่เว็บไซต์</button>
+      <button type="submit">ส่งแบบสอบถาม</button>
     </form>
   </div>
   <script>
@@ -132,7 +132,7 @@
         develop: form.develop.value,
         channel: form.channel.value
       };
-      fetch("https://script.google.com/macros/s/AKfycbvVhONLZW65kVDjKHFYKzsKq6QA_W316m8EYZcPC-OQGp0i668r62GN4f0ArF33xvxTGKw/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbz_-ztd70Esm-mBGX00ZVb0AF2-RuZl7CIWbVSeICI/exec", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -140,7 +140,8 @@
         }
       }).then(res => {
         if (res.ok) {
-          window.location.href = "https://heyzine.com/flip-book/633c182a20.html#page/1";
+          alert("ส่งข้อมูลเรียบร้อยแล้ว");
+          form.reset();
         } else {
           alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
         }
